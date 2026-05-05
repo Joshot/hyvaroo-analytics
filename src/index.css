@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+.light ::-webkit-scrollbar-thumb { background: #cbd5e1; }
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #22d3ee, #4f46e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glow-indigo {
+    box-shadow: 0 0 30px rgba(79,70,229,0.25), 0 4px 20px rgba(79,70,229,0.15);
+  }
+  .glow-purple {
+    box-shadow: 0 0 30px rgba(139,92,246,0.2);
+  }
+  .card-dark {
+    @apply bg-[#0D1424] border border-white/5 rounded-2xl;
+  }
+  .card-light {
+    @apply bg-white border border-gray-100 rounded-2xl shadow-sm;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl font-semibold text-sm text-white transition-all duration-200;
+    background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+    box-shadow: 0 4px 15px rgba(79,70,229,0.35);
+  }
+  .btn-primary:hover { @apply opacity-90 -translate-y-px; }
+}
